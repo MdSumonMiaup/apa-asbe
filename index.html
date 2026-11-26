@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>আপা আসবে</title>
+  <meta name="description" content="আপা বেঁচে আছেন নাকি নাই, আসবেন নাকি আসবেন না — জাতির সবচেয়ে বড় কনফিউশনের একমাত্র স্যাটায়ার পোর্টাল।" />
+  <meta property="og:title" content="আপা আসবে?" />
+  <meta property="og:description" content="শ্রোডিঙ্গারের আপা: একই সাথে জীবিত, মৃত, দিল্লিতে এবং ডিসেম্বরে আসছেন।" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚁</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Tiro+Bangla&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="satire-bar">⚠️ এটি সম্পূর্ণ ব্যঙ্গাত্মক (স্যাটায়ার) ওয়েবসাইট। এখানের কোনো "খবর" সত্য নয় — ঠিক যেমন ফেসবুকের অর্ধেক খবর।</div>
+
+  <header class="masthead">
+    <div class="masthead-meta">
+      <span id="today"></span>
+      <span>সংস্করণ: অনির্দিষ্ট</span>
+      <span>দাম: একটা লাইক</span>
+    </div>
+    <h1>আপা আসবে</h1>
+    <p class="tagline">জাতির একমাত্র নির্ভরযোগ্য অনির্ভরযোগ্য সংবাদমাধ্যম</p>
+    <div class="status-line">
+      <span class="live-dot"></span> লাইভ অবস্থা: <strong id="live-status">লোড হচ্ছে…</strong>
+    </div>
+  </header>
+
+  <div class="ticker" aria-label="গুজব টিকার">
+    <span class="ticker-label">ব্রেকিং গুজব</span>
+    <div class="ticker-track"><div class="ticker-inner" id="ticker"></div></div>
+  </div>
+
+  <main>
+    <!-- Schrödinger -->
+    <section class="card hero" id="box-section">
+      <div class="hero-text">
+        <p class="kicker">বিজ্ঞান বিভাগ</p>
+        <h2>শ্রোডিঙ্গারের আপা</h2>
+        <p>কোয়ান্টাম পদার্থবিদ্যা অনুযায়ী, যতক্ষণ না কেউ দিল্লির বাক্সটা খুলে দেখছে, ততক্ষণ আপা একই সাথে <em>জীবিত</em>, <em>মৃত</em>, <em>অসুস্থ</em>, <em>সুস্থ</em> এবং <em>ডিসেম্বরে আসছেন</em>। বাক্স খুলে দেখুন — আপনার দায়িত্বে।</p>
+        <button class="btn" id="open-box">📦 বাক্স খুলুন</button>
+        <p class="small" id="box-count"></p>
+      </div>
+      <div class="box-stage">
+        <div class="box" id="box">
+          <div class="box-lid"></div>
+          <div class="box-body"><span>দিল্লি<br/>ফ্র্যাজাইল</span></div>
+        </div>
+        <div class="box-result" id="box-result" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <!-- Rumor meter -->
+      <section class="card">
+        <p class="kicker">জরিপ বিভাগ</p>
+        <h2>গুজব-ও-মিটার</h2>
+        <p class="small">ফেসবুক, ইউটিউব থাম্বনেইল আর চায়ের দোকানের রিয়েল-টাইম ডেটা থেকে হিসাব করা।</p>
+        <div class="gauge">
+          <svg viewBox="0 0 200 120" role="img" aria-label="গুজব মিটার">
+            <path d="M20 100 A80 80 0 0 1 180 100" class="gauge-track" />
+            <path d="M20 100 A80 80 0 0 1 100 20" class="gauge-red" />
+            <path d="M100 20 A80 80 0 0 1 180 100" class="gauge-green" />
+            <line x1="100" y1="100" x2="100" y2="32" class="needle" id="needle" />
+            <circle cx="100" cy="100" r="7" class="needle-hub" />
+          </svg>
+          <div class="gauge-labels"><span>মারা গেছেন</span><span>বেঁচে আছেন</span></div>
+        </div>
+        <p class="meter-reading" id="meter-reading">হিসাব চলছে…</p>
+      </section>
+
+      <!-- Countdown -->
+      <section class="card countdown-card">
+        <p class="kicker">জরুরি ঘোষণা</p>
+        <h2>আপা আসার কাউন্টডাউন</h2>
+        <p class="small" id="cd-sub">ডিসেম্বরে আসছেন। কোন ডিসেম্বর সেটা পরে জানানো হবে।</p>
+        <div class="countdown" id="countdown">
+          <div><b id="cd-d">–</b><span>দিন</span></div>
+          <div><b id="cd-h">–</b><span>ঘণ্টা</span></div>
+          <div><b id="cd-m">–</b><span>মিনিট</span></div>
+          <div><b id="cd-s">–</b><span>সেকেন্ড</span></div>
+        </div>
+        <p class="postponed" id="postponed"></p>
+      </section>
+    </div>
+
+    <!-- Waiting room -->
+    <section class="card waiting">
+      <p class="kicker">দলীয় কার্যালয়</p>
+      <h2>আওয়ামী লীগ ওয়েটিং রুম</h2>
+      <p>দয়া করে অপেক্ষা করুন। আপনার নেত্রী বর্তমানে অন্য একটি দেশে ব্যস্ত আছেন। আপনার অপেক্ষা আমাদের কাছে গুরুত্বপূর্ণ।</p>
+      <div class="progress"><div class="progress-fill" id="progress"></div></div>
+      <p class="progress-text" id="progress-text">আপা আসছেন… ০%</p>
+      <div class="stats">
+        <div><b id="waiting-count">০</b><span>অপেক্ষারত নেতাকর্মী</span></div>
+        <div><b id="fled-count">০</b><span>অপেক্ষা করতে করতে বিদেশে চলে গেছেন</span></div>
+        <div><b id="tea-count">০</b><span>কাপ চা শেষ</span></div>
+      </div>
+      <div class="actions">
+        <button class="btn" id="join-wait">🙋 আমিও অপেক্ষা করব</button>
+        <button class="btn btn-ghost" id="give-up">🏃 থাক, আমি পালাই</button>
+      </div>
+      <p class="small" id="wait-msg"></p>
+    </section>
+
+    <div class="grid">
+      <!-- Rumor generator -->
+      <section class="card">
+        <p class="kicker">কারখানা</p>
+        <h2>গুজব জেনারেটর</h2>
+        <p class="small">নিজের ইউটিউব চ্যানেলের জন্য ফ্রেশ গুজব বানান। শতভাগ ভিত্তিহীন, শতভাগ ভাইরাল।</p>
+        <blockquote class="rumor" id="rumor">বাটনে চাপ দিন, গুজব তৈরি হোক।</blockquote>
+        <p class="source" id="rumor-source"></p>
+        <div class="actions">
+          <button class="btn" id="gen-rumor">🎲 নতুন গুজব</button>
+          <button class="btn btn-ghost" id="copy-rumor">📋 কপি করে ফরোয়ার্ড করুন</button>
+        </div>
+      </section>
+
+      <!-- Fact check -->
+      <section class="card">
+        <p class="kicker">যাচাই বিভাগ</p>
+        <h2>গুজব যাচাই কেন্দ্র</h2>
+        <p class="small">আপনার শোনা যেকোনো খবর লিখুন। আমাদের অত্যাধুনিক "আন্দাজ ইঞ্জিন" সেটা যাচাই করবে।</p>
+        <form id="fact-form" class="fact-form">
+          <input id="fact-input" type="text" placeholder="যেমন: আপা নাকি কাল রাতে…" autocomplete="off" />
+          <button class="btn" type="submit">যাচাই করুন</button>
+        </form>
+        <div class="verdict" id="verdict" aria-live="polite"></div>
+      </section>
+    </div>
+
+    <!-- Quotes -->
+    <section class="card">
+      <p class="kicker">আর্কাইভ</p>
+      <h2>বিখ্যাত উক্তি ও তার পরবর্তী ঘটনা</h2>
+      <div class="quotes">
+        <figure>
+          <blockquote>"শেখ হাসিনা পালায় না।"</blockquote>
+          <figcaption>— পরের দৃশ্য: একটা হেলিকপ্টার, যে আজও কিছু বলতে রাজি না 🚁</figcaption>
+        </figure>
+        <figure>
+          <blockquote>"খেলা হবে।"</blockquote>
+          <figcaption>— খেলা হয়েছে। স্কোর জানতে দিল্লিতে যোগাযোগ করুন।</figcaption>
+        </figure>
+        <figure>
+          <blockquote>"উন্নয়নের রোল মডেল।"</blockquote>
+          <figcaption>— রোল হয়ে গেছে। মডেল এখন অন্য দেশে।</figcaption>
+        </figure>
+        <figure>
+          <blockquote>"ভোট দিতে যাওয়ার দরকার নেই, আমরা আছি।"</blockquote>
+          <figcaption>— একটি অনানুষ্ঠানিক নির্বাচনী দর্শন (কাল্পনিক, তবে চেনা চেনা লাগে)।</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Poll -->
+    <section class="card">
+      <p class="kicker">জনমত জরিপ</p>
+      <h2>আপনার কী মনে হয়?</h2>
+      <p class="small">ফলাফল আগে থেকেই ঠিক করা আছে, ঐতিহ্য বজায় রেখে।</p>
+      <div class="poll" id="poll">
+        <button data-v="0">আপা বেঁচে আছেন</button>
+        <button data-v="1">আপা নাই</button>
+        <button data-v="2">ডিসেম্বরে আসবেন</button>
+        <button data-v="3">আমি আর নিউজ দেখি না</button>
+      </div>
+      <div class="poll-result" id="poll-result" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>আপা আসবে</strong> — একটি নির্ভেজাল স্যাটায়ার প্রজেক্ট। কোনো ব্যক্তি, দল বা সংবাদমাধ্যমের সাথে এর কোনো সম্পর্ক নেই। সব "খবর", "সূত্র" ও "জরিপ" কাল্পনিক।</p>
+    <p class="small">কোনো গুজব শেয়ার করার আগে যাচাই করুন। (আমাদের এখানে না, আসল জায়গায়।)</p>
+  </footer>
+
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
