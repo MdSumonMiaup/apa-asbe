@@ -1,0 +1,25 @@
+{
+  "name": "apa-asbe",
+  "version": "1.0.0",
+  "private": true,
+  "description": "আপা আসবে? — একটি স্যাটায়ার ওয়েবসাইট",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "engines": {
+    "node": ">=20.9"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.7",
+    "@types/react": "19.3.3",
+    "@types/react-dom": "19.3.0",
+    "typescript": "5.9.3"
+  }
+}
