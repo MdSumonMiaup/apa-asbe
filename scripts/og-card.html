@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8" />
+<title>OG card</title>
+<!--
+  Source for the social preview image (app/opengraph-image.png).
+  Regenerate with: npm run og
+  Rendered with a real browser (not next/og) because Satori can't shape Bangla text correctly.
+-->
+<link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@700;800&family=Hind+Siliguri:wght@600;700&display=block" rel="stylesheet" />
+<style>
+  :root { --ink:#0b0b0b; --yellow:#ffe14d; --pink:#ff6fb5; --green:#18c27a; --red:#ff3b2f; --paper:#f3efe4; --blue:#4d6bff; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: var(--paper);
+    background-image: linear-gradient(rgba(0,0,0,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,.07) 1px, transparent 1px);
+    background-size: 40px 40px;
+    font-family: "Hind Siliguri", sans-serif; color: var(--ink);
+    padding: 28px;
+  }
+  .card {
+    position: relative; width: calc(100% - 14px); height: calc(100% - 14px);
+    background: var(--yellow); border: 6px solid var(--ink); box-shadow: 14px 14px 0 var(--ink);
+    padding: 26px 36px; overflow: hidden;
+  }
+  .ticker {
+    position: absolute; left: 0; right: 0; bottom: 0; height: 58px;
+    background: var(--ink); color: #fff; display: flex; align-items: center;
+    font-weight: 700; font-size: 22px; white-space: nowrap; border-top: 6px solid var(--ink);
+  }
+  .ticker b { background: var(--red); height: 100%; display: flex; align-items: center; padding: 0 18px; font-family: "Anek Bangla"; font-size: 24px; margin-right: 18px; }
+  .ticker span::before { content: "★ "; color: var(--yellow); }
+  .kicker { display: inline-block; background: var(--ink); color: #fff; font-weight: 700; font-size: 22px; padding: 2px 14px; }
+  h1 {
+    font-family: "Anek Bangla"; font-weight: 800; font-size: 178px; line-height: .86; letter-spacing: -3px;
+    margin-top: 18px; text-shadow: 9px 9px 0 var(--pink);
+  }
+  h1 .q { color: var(--red); display: inline-block; transform: rotate(12deg); text-shadow: 9px 9px 0 var(--ink); }
+  .sub { font-weight: 700; font-size: 27px; margin-top: 18px; max-width: 560px; line-height: 1.35; }
+
+  .right { position: absolute; right: 30px; top: 58px; width: 430px; display: grid; gap: 16px; }
+  .bottom-row { display: flex; gap: 14px; align-items: center; }
+  .bottom-row > div:first-child { flex: 1; display: grid; gap: 10px; }
+  .status { background: #fff; border: 5px solid var(--ink); box-shadow: 7px 7px 0 var(--ink); padding: 14px 18px; }
+  .status h2 { font-family: "Anek Bangla"; font-size: 28px; line-height: 1.1; margin-bottom: 8px; }
+  .row { display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 23px; padding: 3px 0; border-bottom: 3px dashed rgba(0,0,0,.18); }
+  .row:last-child { border-bottom: 0; }
+  .tick { font-family: "Anek Bangla"; font-weight: 800; font-size: 20px; padding: 0 10px; border: 3px solid var(--ink); }
+  .yes { background: var(--green); } .no { background: var(--red); color: #fff; } .maybe { background: var(--pink); }
+
+  .progress { border: 5px solid var(--ink); background: #fff; height: 46px; position: relative; box-shadow: 7px 7px 0 var(--ink); }
+  .progress i { position: absolute; inset: 0 1% 0 0; background: repeating-linear-gradient(-45deg, var(--ink) 0 14px, var(--yellow) 14px 28px); border-right: 5px solid var(--ink); }
+  .progress span { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: #fff; border: 3px solid var(--ink); padding: 0 10px; font-family: "Anek Bangla"; font-weight: 800; font-size: 22px; }
+  .progress-label { font-weight: 800; font-size: 19px; line-height: 1.2; }
+
+  .seal {
+    flex: none;
+    width: 128px; height: 128px; border-radius: 50%;
+    border: 7px double #7a1fa2; color: #7a1fa2; background: rgba(122,31,162,.08);
+    display: grid; place-items: center; text-align: center;
+    font-family: "Anek Bangla"; font-weight: 800; font-size: 20px; line-height: 1.05;
+    transform: rotate(-16deg);
+  }
+  .seal big { display: block; font-size: 34px; }
+  .sticker {
+    position: absolute; right: 40px; top: 12px; z-index: 2; transform: rotate(5deg);
+    background: var(--green); border: 5px solid var(--ink); box-shadow: 6px 6px 0 var(--ink);
+    font-family: "Anek Bangla"; font-weight: 800; font-size: 26px; padding: 2px 16px;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <span class="kicker">⚠️ স্যাটায়ার · জনমত জরিপ চলছে</span>
+    <div class="sticker">ভোট দিন! 🗳️</div>
+    <h1>আপা<br />আসবে<span class="q">?</span></h1>
+    <p class="sub">জীবিত, মৃত, দিল্লিতে, নাকি ডিসেম্বরে আসছেন? — কেউ জানে না, আমরাও না।</p>
+
+    <div class="right">
+      <div class="status">
+        <h2>আজকের অবস্থা 🔴 লাইভ</h2>
+        <div class="row">জীবিত? <span class="tick maybe">হয়তো</span></div>
+        <div class="row">মৃত? <span class="tick maybe">হয়তো</span></div>
+        <div class="row">দিল্লিতে? <span class="tick yes">হ্যাঁ</span></div>
+        <div class="row">ডিসেম্বরে আসবেন? <span class="tick no">কোন ডিসেম্বর?</span></div>
+      </div>
+      <div class="bottom-row">
+        <div>
+          <div class="progress"><i></i><span>৯৯%</span></div>
+          <p class="progress-label">আপা আসছেন… ২০২৪ সাল থেকে</p>
+        </div>
+        <div class="seal"><span>অফিসিয়াল<big>১৫৩.৮%</big>নৌকা</span></div>
+      </div>
+    </div>
+
+    <div class="ticker">
+      <b>ব্রেকিং গুজব</b>
+      <span>দিল্লির বারান্দায় শাড়ি শুকাতে দেখা গেছে — বিশেষজ্ঞরা বলছেন &lsquo;প্রমাণ মিলেছে&rsquo;</span>
+    </div>
+  </div>
+</body>
+</html>
